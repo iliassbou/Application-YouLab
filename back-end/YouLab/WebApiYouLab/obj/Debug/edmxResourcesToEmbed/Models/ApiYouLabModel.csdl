@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="YouLabModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="ID_Cat" />
+    </Key>
+    <Property Name="ID_Cat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_Cat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Examen" Relationship="Self.Categorie_Examen" FromRole="Categorie" ToRole="Examen" />
+  </EntityType>
+  <EntityType Name="Consultation">
+    <Key>
+      <PropertyRef Name="ID_Consult" />
+    </Key>
+    <Property Name="ID_Consult" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientID_P" Type="Int32" Nullable="false" />
+    <Property Name="MedecinID_Med" Type="Int32" Nullable="false" />
+    <Property Name="Date_consult" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Medecin" Relationship="Self.FKConsultati257582" FromRole="Consultation" ToRole="Medecin" />
+    <NavigationProperty Name="Patient" Relationship="Self.FKConsultati266250" FromRole="Consultation" ToRole="Patient" />
+    <NavigationProperty Name="Resultat" Relationship="Self.FKResultat546153" FromRole="Consultation" ToRole="Resultat" />
+  </EntityType>
+  <EntityType Name="Examen">
+    <Key>
+      <PropertyRef Name="ID_Exam" />
+    </Key>
+    <Property Name="ID_Exam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LaborantinID_laboran" Type="Int32" Nullable="false" />
+    <Property Name="Nom_Exam" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Valeur_Exam" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Unite_Exam" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Laborantin" Relationship="Self.FKExamen916924" FromRole="Examen" ToRole="Laborantin" />
+    <NavigationProperty Name="Resultat" Relationship="Self.FKResultat319199" FromRole="Examen" ToRole="Resultat" />
+    <NavigationProperty Name="Categorie" Relationship="Self.Categorie_Examen" FromRole="Examen" ToRole="Categorie" />
+  </EntityType>
+  <EntityType Name="Laborantin">
+    <Key>
+      <PropertyRef Name="ID_laboran" />
+    </Key>
+    <Property Name="ID_laboran" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_laboran" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Examen" Relationship="Self.FKExamen916924" FromRole="Laborantin" ToRole="Examen" />
+  </EntityType>
+  <EntityType Name="Medecin">
+    <Key>
+      <PropertyRef Name="ID_Med" />
+    </Key>
+    <Property Name="ID_Med" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_Med" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom_Med" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Consultation" Relationship="Self.FKConsultati257582" FromRole="Medecin" ToRole="Consultation" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="ID_P" />
+    </Key>
+    <Property Name="ID_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_P" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom_P" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="Int32" />
+    <Property Name="Date_Naiss" Type="DateTime" Precision="3" />
+    <Property Name="CIN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Securite_social" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sexe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Groupe_sanguin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Consultation" Relationship="Self.FKConsultati266250" FromRole="Patient" ToRole="Consultation" />
+  </EntityType>
+  <EntityType Name="Resultat">
+    <Key>
+      <PropertyRef Name="ID_Res" />
+    </Key>
+    <Property Name="ID_Res" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Float_Valeur" Type="Single" />
+    <Property Name="ExamenID_Exam" Type="Int32" Nullable="false" />
+    <Property Name="ConsultationID_Consult" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Consultation" Relationship="Self.FKResultat546153" FromRole="Resultat" ToRole="Consultation" />
+    <NavigationProperty Name="Examen" Relationship="Self.FKResultat319199" FromRole="Resultat" ToRole="Examen" />
+  </EntityType>
+  <EntityType Name="Secretaire">
+    <Key>
+      <PropertyRef Name="ID_sec" />
+    </Key>
+    <Property Name="ID_sec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom_sec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom_sec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FKConsultati257582">
+    <End Role="Medecin" Type="Self.Medecin" Multiplicity="1" />
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medecin">
+        <PropertyRef Name="ID_Med" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="MedecinID_Med" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKConsultati266250">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="ID_P" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="PatientID_P" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKResultat546153">
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="1" />
+    <End Role="Resultat" Type="Self.Resultat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consultation">
+        <PropertyRef Name="ID_Consult" />
+      </Principal>
+      <Dependent Role="Resultat">
+        <PropertyRef Name="ConsultationID_Consult" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKExamen916924">
+    <End Role="Laborantin" Type="Self.Laborantin" Multiplicity="1" />
+    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Laborantin">
+        <PropertyRef Name="ID_laboran" />
+      </Principal>
+      <Dependent Role="Examen">
+        <PropertyRef Name="LaborantinID_laboran" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKResultat319199">
+    <End Role="Examen" Type="Self.Examen" Multiplicity="1" />
+    <End Role="Resultat" Type="Self.Resultat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Examen">
+        <PropertyRef Name="ID_Exam" />
+      </Principal>
+      <Dependent Role="Resultat">
+        <PropertyRef Name="ExamenID_Exam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Categorie_Examen">
+    <End Role="Examen" Type="Self.Examen" Multiplicity="*" />
+    <End Role="Categorie" Type="Self.Categorie" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="YouLabEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorie" EntityType="Self.Categorie" />
+    <EntitySet Name="Consultation" EntityType="Self.Consultation" />
+    <EntitySet Name="Examen" EntityType="Self.Examen" />
+    <EntitySet Name="Laborantin" EntityType="Self.Laborantin" />
+    <EntitySet Name="Medecin" EntityType="Self.Medecin" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" />
+    <EntitySet Name="Resultat" EntityType="Self.Resultat" />
+    <EntitySet Name="Secretaire" EntityType="Self.Secretaire" />
+    <AssociationSet Name="FKConsultati257582" Association="Self.FKConsultati257582">
+      <End Role="Medecin" EntitySet="Medecin" />
+      <End Role="Consultation" EntitySet="Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FKConsultati266250" Association="Self.FKConsultati266250">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Consultation" EntitySet="Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FKResultat546153" Association="Self.FKResultat546153">
+      <End Role="Consultation" EntitySet="Consultation" />
+      <End Role="Resultat" EntitySet="Resultat" />
+    </AssociationSet>
+    <AssociationSet Name="FKExamen916924" Association="Self.FKExamen916924">
+      <End Role="Laborantin" EntitySet="Laborantin" />
+      <End Role="Examen" EntitySet="Examen" />
+    </AssociationSet>
+    <AssociationSet Name="FKResultat319199" Association="Self.FKResultat319199">
+      <End Role="Examen" EntitySet="Examen" />
+      <End Role="Resultat" EntitySet="Resultat" />
+    </AssociationSet>
+    <AssociationSet Name="Categorie_Examen" Association="Self.Categorie_Examen">
+      <End Role="Examen" EntitySet="Examen" />
+      <End Role="Categorie" EntitySet="Categorie" />
+    </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="YouLabModel.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="YouLabModel.AspNetRoles" />
+    <EntitySet Name="AspNetUserClaims" EntityType="YouLabModel.AspNetUserClaims" />
+    <EntitySet Name="AspNetUserLogins" EntityType="YouLabModel.AspNetUserLogins" />
+    <EntitySet Name="AspNetUsers" EntityType="YouLabModel.AspNetUsers" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="YouLabModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="YouLabModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="YouLabModel.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="YouLabModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="YouLabModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="YouLabModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="YouLabModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="YouLabModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="YouLabModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Type="YouLabModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="YouLabModel.AspNetUserClaims" Role="AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="YouLabModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="YouLabModel.AspNetUserLogins" Role="AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="YouLabModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+    <End Type="YouLabModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+  </Association>
+</Schema>

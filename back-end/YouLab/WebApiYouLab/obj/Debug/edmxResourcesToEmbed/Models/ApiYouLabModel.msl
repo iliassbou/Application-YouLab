@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="YouLabModelStoreContainer" CdmEntityContainer="YouLabEntities">
+    <EntitySetMapping Name="Categorie">
+      <EntityTypeMapping TypeName="YouLabModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="ID_Cat" ColumnName="ID_Cat" />
+          <ScalarProperty Name="Nom_Cat" ColumnName="Nom_Cat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consultation">
+      <EntityTypeMapping TypeName="YouLabModel.Consultation">
+        <MappingFragment StoreEntitySet="Consultation">
+          <ScalarProperty Name="ID_Consult" ColumnName="ID_Consult" />
+          <ScalarProperty Name="PatientID_P" ColumnName="PatientID_P" />
+          <ScalarProperty Name="MedecinID_Med" ColumnName="MedecinID_Med" />
+          <ScalarProperty Name="Date_consult" ColumnName="Date_consult" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Examen">
+      <EntityTypeMapping TypeName="YouLabModel.Examen">
+        <MappingFragment StoreEntitySet="Examen">
+          <ScalarProperty Name="ID_Exam" ColumnName="ID_Exam" />
+          <ScalarProperty Name="LaborantinID_laboran" ColumnName="LaborantinID_laboran" />
+          <ScalarProperty Name="Nom_Exam" ColumnName="Nom_Exam" />
+          <ScalarProperty Name="Valeur_Exam" ColumnName="Valeur_Exam" />
+          <ScalarProperty Name="Unite_Exam" ColumnName="Unite_Exam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laborantin">
+      <EntityTypeMapping TypeName="YouLabModel.Laborantin">
+        <MappingFragment StoreEntitySet="Laborantin">
+          <ScalarProperty Name="ID_laboran" ColumnName="ID_laboran" />
+          <ScalarProperty Name="Nom_laboran" ColumnName="Nom_laboran" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medecin">
+      <EntityTypeMapping TypeName="YouLabModel.Medecin">
+        <MappingFragment StoreEntitySet="Medecin">
+          <ScalarProperty Name="ID_Med" ColumnName="ID_Med" />
+          <ScalarProperty Name="Nom_Med" ColumnName="Nom_Med" />
+          <ScalarProperty Name="Prenom_Med" ColumnName="Prenom_Med" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient">
+      <EntityTypeMapping TypeName="YouLabModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="ID_P" ColumnName="ID_P" />
+          <ScalarProperty Name="Nom_P" ColumnName="Nom_P" />
+          <ScalarProperty Name="Prenom_P" ColumnName="Prenom_P" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Date_Naiss" ColumnName="Date_Naiss" />
+          <ScalarProperty Name="CIN" ColumnName="CIN" />
+          <ScalarProperty Name="Securite_social" ColumnName="Securite_social" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+          <ScalarProperty Name="Groupe_sanguin" ColumnName="Groupe_sanguin" />
+          <ScalarProperty Name="User_name" ColumnName="User_name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resultat">
+      <EntityTypeMapping TypeName="YouLabModel.Resultat">
+        <MappingFragment StoreEntitySet="Resultat">
+          <ScalarProperty Name="ID_Res" ColumnName="ID_Res" />
+          <ScalarProperty Name="Float_Valeur" ColumnName="Float_Valeur" />
+          <ScalarProperty Name="ExamenID_Exam" ColumnName="ExamenID_Exam" />
+          <ScalarProperty Name="ConsultationID_Consult" ColumnName="ConsultationID_Consult" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Secretaire">
+      <EntityTypeMapping TypeName="YouLabModel.Secretaire">
+        <MappingFragment StoreEntitySet="Secretaire">
+          <ScalarProperty Name="ID_sec" ColumnName="ID_sec" />
+          <ScalarProperty Name="Nom_sec" ColumnName="Nom_sec" />
+          <ScalarProperty Name="Prenom_sec" ColumnName="Prenom_sec" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Categorie_Examen" TypeName="YouLabModel.Categorie_Examen" StoreEntitySet="Categorie_Examen">
+      <EndProperty Name="Examen">
+        <ScalarProperty Name="ID_Exam" ColumnName="ExamenID_Exam" />
+      </EndProperty>
+      <EndProperty Name="Categorie">
+        <ScalarProperty Name="ID_Cat" ColumnName="CategorieID_Cat" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="YouLabModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="YouLabModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="YouLabModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="YouLabModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="YouLabModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="YouLabModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

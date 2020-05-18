@@ -1,0 +1,35 @@
+.navbar {
+  background-color: #88cbff;
+  position: relative;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 2rem;
+  font-size: 14px;
+}
+
+.search1 {
+  margin: 4rem;
+  padding-left: 22rem;
+}
+
+.search {
+  padding-left: 7rem;
+  margin-left: 64%;
+}
+
+thead {
+  background-color: lightgray;
+  /* #88CBFF; */
+}
+
+tbody {
+  text-align: center;
+}
+
+.icons {
+  width: 1px;
+}

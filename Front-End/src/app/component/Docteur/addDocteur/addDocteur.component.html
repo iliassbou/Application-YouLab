@@ -1,0 +1,42 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div class="c-size d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row row-one">
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <input type="text" id="form1" class="form-control" />
+                        <label for="form1">Nom Docteur</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <input type="text" id="form1" class="form-control" />
+                        <label for="form1">Prénom Docteur</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <input type="text" id="form1" class="form-control" />
+                        <label for="form1">User Name</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <input type="password" id="form1" class="form-control" />
+                        <label for="form1">Password</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<section>
+    <p>
+        <button routerLink="/ListDocteur" class="btn btn-2 btn-2a icon-arrow-right">
+            Enregistrer
+        </button>
+    </p>
+</section>

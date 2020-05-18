@@ -1,0 +1,109 @@
+<div class="container col-md-12">
+
+  <h2 class='mb-3'>Patient Liste</h2>
+  <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th class="th-sm">ID Patient
+
+        </th>
+        <th class="th-sm">Nom Patient
+
+        </th>
+        <th class="th-sm">Prénom Patient
+
+        </th>
+        <th class="th-sm">CIN
+
+        </th>
+        <th class="th-sm">Téléphone
+
+        </th>
+        <th class="th-sm">Paramètre
+
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of datas; let i=index">
+        <th scope="row">{{ data.ID_P }}</th>
+        <td>{{ data.Nom_P }}</td>
+        <td>{{ data.Prenom_P }}</td>
+        <td>{{ data.CIN }}</td>
+        <td>{{ data.Telephone }}</td>
+        <td class="text-right">
+          <a (click)="getPatientById(id)" routerLink="/userinfo/{{data.ID_P}}" class="btn btn-sm btn-light mr-2">
+            <i class="fa fa-eye icons"></i>
+          </a>
+          <a (click)="deleteTask(data.ID_P)" class="btn btn-sm btn-danger mr-2">
+            <i class="fa fa-trash icons"></i>
+          </a>
+          <a href="" class="btn btn-sm btn-primary">
+            <i class="fa fa-pencil icons"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- 
+  <div class="search1 col-mad-12 mx-auto">
+    <form>
+      <div class="row col-12 mx-auto mt-5">
+        <div class="md-form col-md-2">
+          <input placeholder="Nom" type="text" id="inputPlaceholderEx" class="form-control" />
+        </div>
+        <div class="md-form col-md-2">
+          <input placeholder="Prénom" type="text" id="inputPlaceholderEx" class="form-control" />
+        </div>
+        <div class="md-form col-md-2">
+          <input placeholder="CIN" type="text" id="inputPlaceholderEx" class="form-control" />
+        </div>
+        <div class="md-form col-md-2">
+          <input placeholder="Téléphone" type="text" id="inputPlaceholderEx" class="form-control" />
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary px-3">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-12 mx-auto mt-5">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Prénom</th>
+          <th scope="col">CIN</th>
+          <th scope="col">Téléphone</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of datas; let i=index">
+          <th scope="row">{{ data.ID_P }}</th>
+          <td>{{ data.Nom_P }}</td>
+          <td>{{ data.Prenom_P }}</td>
+          <td>{{ data.CIN }}</td>
+          <td>{{ data.Telephone }}</td>
+          <td class="text-right">
+            <a (click)="getPatientById(id)" routerLink="/userinfo/{{data.ID_P}}" class="btn btn-sm btn-light mr-2">
+              <i class="fa fa-eye"></i>
+            </a>
+            <a (click)="deleteTask(data.ID_P)" class="btn btn-sm btn-danger mr-2">
+              <i class="fa fa-trash"></i>
+            </a>
+            <a href="" class="btn btn-sm btn-primary">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+</div>

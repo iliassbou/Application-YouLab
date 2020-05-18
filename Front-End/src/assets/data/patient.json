@@ -1,0 +1,48 @@
+{
+  "patient": [
+    {
+      "id": 1,
+      "nom": "Chaimae",
+      "prenom": "Ess-bbah",
+      "cin": "HA 00 00 00",
+      "adresse": "Quartier Laghdir",
+      "telephone": "06 00 00 00 00",
+      "email": "chaimaaessbbah@gmail.com",
+      "gender": "femme",
+      "age": 22
+    },
+    {
+      "id": 2,
+      "nom": "Chaimae",
+      "prenom": "Ess-bbah",
+      "cin": "HA 00 00 00",
+      "adresse": "Quartier Laghdir",
+      "telephone": "06 00 00 00 00",
+      "email": "chaimaaessbbah@gmail.com",
+      "gender": "femme",
+      "age": 22
+    },
+    {
+      "id": 3,
+      "nom": "Chaimae",
+      "prenom": "Ess-bbah",
+      "cin": "HA 00 00 00",
+      "adresse": "Quartier Laghdir",
+      "telephone": "06 00 00 00 00",
+      "email": "chaimaaessbbah@gmail.com",
+      "gender": "femme",
+      "age": 22
+    },
+    {
+      "id": 4,
+      "nom": "Chaimae",
+      "prenom": "Ess-bbah",
+      "cin": "HA 00 00 00",
+      "adresse": "Quartier Laghdir",
+      "telephone": "06 00 00 00 00",
+      "email": "chaimaaessbbah@gmail.com",
+      "gender": "femme",
+      "age": 22
+    }
+  ]
+}

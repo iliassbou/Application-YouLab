@@ -1,0 +1,152 @@
+.navbar {
+  background-color: #88cbff;
+}
+
+.btn {
+  border: none;
+  font: 700 14px Arial;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 22px 58px;
+  display: inline-block;
+  margin: 0px 50px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/******* BUTTONS btn-2 versions ********/
+.btn-2 {
+  border: 3px solid #fff;
+  color: #fff;
+  overflow: hidden;
+  background-color: #b1ade2;
+  background-image: linear-gradient(315deg, #b1ade2 0%, #7ddff8 74%);
+  margin-left: 58%;
+  margin-top: 8rem;
+}
+.btn-2:before {
+  position: absolute;
+  height: 100%;
+  font-size: 125%;
+  line-height: 3.5;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn-2:hover {
+  /* background: #88cbff; */
+  background-color: #b1ade2;
+  background-image: linear-gradient(315deg, #b1ade2 0%, #7ddff8 74%);
+}
+.btn-2a:before {
+  left: 70%;
+  opacity: 0;
+  top: 0;
+}
+.btn-2a:hover:before {
+  left: 130%;
+  opacity: 1;
+}
+/******* BUTTONS btn-3 versions ********/
+.btn:before,
+.icon-heart:after,
+.icon-star:after,
+.icon-plus:after,
+.icon-file:before {
+  font-family: FontAwesome;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+/******* BUTTONS btn-4 versions ********/
+/****** ICONS *****/
+.icon-arrow-right:before {
+  content: "\f061";
+}
+
+.card {
+  margin-top: 8rem;
+  width: 48rem;
+  margin-left: 7rem;
+}
+
+form {
+  margin-top: 5rem;
+}
+
+/* .container1 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  font-family: Arial;
+  background: #f6f4f4;
+}
+.row { */
+/* background: linear-gradient(#4caf50, #330033); */
+/* background-color: #36096d;
+  background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+  width: 400px;
+  height: 500px;
+  border-top-left-radius: 110px;
+  border-bottom-right-radius: 110px;
+  border: 7px solid #ffffff;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+}
+form {
+  padding: 40px;
+}
+form h1 {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Akronim";
+  font-size: 5rem;
+}
+form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 170%;
+  margin: 0 0 30px -48px;
+  padding: 23px;
+  margin-top: 22%;
+  box-sizing: border-box;
+  font-size: 15px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+button {
+  outline: 0;
+  background: #4c4c4c;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 18px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background: #666666;
+} */

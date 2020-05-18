@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d6e6b8d9628f4e76b6ddbe6cece34faf" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="YouLabModel.Categorie" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="YouLabModel.Consultation" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="YouLabModel.Examen" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="YouLabModel.Laborantin" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="YouLabModel.Medecin" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="YouLabModel.Patient" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="YouLabModel.Resultat" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="YouLabModel.Secretaire" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="YouLabModel.FKConsultati257582" ManuallyRouted="false" />
+        <AssociationConnector Association="YouLabModel.FKConsultati266250" ManuallyRouted="false" />
+        <AssociationConnector Association="YouLabModel.FKResultat546153" ManuallyRouted="false" />
+        <AssociationConnector Association="YouLabModel.FKExamen916924" ManuallyRouted="false" />
+        <AssociationConnector Association="YouLabModel.FKResultat319199" ManuallyRouted="false" />
+        <AssociationConnector Association="YouLabModel.Categorie_Examen" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="YouLabModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="YouLabModel.AspNetRoles" Width="1.5" PointX="7.75" PointY="2.5" />
+        <EntityTypeShape EntityType="YouLabModel.AspNetUserClaims" Width="1.5" PointX="12.25" PointY="1" />
+        <EntityTypeShape EntityType="YouLabModel.AspNetUserLogins" Width="1.5" PointX="12.25" PointY="3.75" />
+        <EntityTypeShape EntityType="YouLabModel.AspNetUsers" Width="1.5" PointX="10" PointY="1.375" />
+        <AssociationConnector Association="YouLabModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="YouLabModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="YouLabModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

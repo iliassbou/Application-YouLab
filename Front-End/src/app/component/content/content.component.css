@@ -1,0 +1,65 @@
+.about {
+    position: relative;
+    margin-top: 22rem;
+    background-color:#FAF8FB;
+    width: 94%;
+    padding-left: 13rem;
+    height: 32rem;
+}
+
+.about>img {
+    margin-top: 3rem;
+    width: 40rem;
+}
+
+.about1 {
+    margin-left: -10rem;
+    margin-top: -28rem;
+}
+
+.about1>h1 {
+    font-size: 48px;
+    /* font-weight: bold; */
+    font-family: 'Akronim';
+    word-spacing: 4px;
+    padding-top: 2rem;
+}
+
+.about1>p {
+    font-family: 'Arial, Helvetica, sans-serif';
+    font-size: 20px;
+    margin-top: 58px;
+}
+
+.info {
+    margin-top: 14rem;
+}
+
+.info>h1 {
+    font-size: 30px;
+    font-family: 'Arial';
+    /* word-spacing: 4px; */
+    margin-top: -4rem;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    border: none;
+    margin-top: 7rem;
+    margin-left: 2rem;
+}
+
+.card-title {
+    width: 13rem;
+    height: 5rem;
+}
+
+.card-text {
+    text-decoration: none;
+    color: black;
+    margin-top: 4rem;
+    margin-left: -4rem;
+    width: 21rem;
+    text-align: center;
+}

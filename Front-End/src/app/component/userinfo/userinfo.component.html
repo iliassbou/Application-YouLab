@@ -1,0 +1,158 @@
+<!------ Include the above in your HEAD tag ---------->
+<div class="container col-md-12 mt-5">
+  <form>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>
+            {{patients.Nom_P}} {{patients.Prenom_P}}
+          </h5>
+          <h6>
+            Patient
+          </h6>
+          <p class="proile-rating">VISITES : <span>8</span></p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Apropos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                aria-selected="false">Les Consultation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <ng-container *ngIf="patients">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Patient ID</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{patients.ID_P}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Nom complet</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{patients.Nom_P}} {{patients.Prenom_P}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>CIN</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{patients.CIN}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Adresse</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{patients.Adresse}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Phone</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{patients.Telephone}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Email</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{patients.Email}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Sexe</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{patients.Sexe}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Date de Naissance</label>
+                </div>
+                <div class="col-md-6">
+                  <p>{{ patients.Date_Naiss }}</p>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Experience</label>
+              </div>
+              <div class="col-md-6">
+                <p>11mg</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Hémoglobine glyquée</label>
+              </div>
+              <div class="col-md-6">
+                <p>10mg</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>LH</label>
+              </div>
+              <div class="col-md-6">
+                <p>230</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Plaquettes</label>
+              </div>
+              <div class="col-md-6">
+                <p>400</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Triglycérides</label>
+              </div>
+              <div class="col-md-6">
+                <p>80</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label>Immunoglobulines E (IgE)</label>
+              </div>
+              <div class="col-md-6">
+                <p>588</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
